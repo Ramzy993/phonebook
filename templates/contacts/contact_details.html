@@ -9,6 +9,15 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
            Phones :
+          <ul class="list-group list-group-flush">
+            {% for phone_num in contact.phonenum_set.all  %}
+            <li class="list-group-item">
+              {{ phone_num.number }}
+            </li>
+            {% endfor %}
+          </ul>
+
+
         <li class="list-group-item">
           Email : {{ contact.email|default_if_none:"no email" }}
         </li>
